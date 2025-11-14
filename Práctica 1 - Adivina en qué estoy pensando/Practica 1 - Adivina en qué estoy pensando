@@ -1,1 +1,780 @@
-{"nbformat":4,"nbformat_minor":0,"metadata":{"colab":{"provenance":[]},"kernelspec":{"name":"python3","display_name":"Python 3"},"language_info":{"name":"python"}},"cells":[{"cell_type":"code","execution_count":null,"metadata":{"colab":{"base_uri":"https://localhost:8080/"},"id":"8jU4kMAxeuv9","executionInfo":{"status":"ok","timestamp":1756837596401,"user_tz":360,"elapsed":24724,"user":{"displayName":"Carlos Armando Medina Ascencio","userId":"12497040390483739411"}},"outputId":"3321e409-180d-4f92-8e4f-d42ac8474938"},"outputs":[{"output_type":"stream","name":"stdout","text":["Bienvenido\n","Piensa en cualquier cosa que se te ocurra y lo adivinaré\n","Solo puedes responder con 'S' (sí) o 'N' (no)\n","El objetivo es adivinar la categoría de tu pensamiento en menos de 20 preguntas\n","¿Estás pensando en algo que existe dentro de nuestra realidad? (S/N): \n","Por favor, responde solo con 'S' (sí) o 'N' (no).\n","Tu respuesta debe ser una sola letra: 'S' para sí o 'N' para no.\n","Intenta de nuevo para continuar con el juego.\n","¿Estás pensando en algo que existe dentro de nuestra realidad? (S/N): s\n","¿Es algo que está vivo? (S/N): n\n","¿Es un objeto físico que puedes tocar? (S/N): s\n","¿Es un alimento o una bebida? (S/N): s\n","¿Es algo que se come (sólido)? (S/N): s\n","¿Tiene sabor principalmente dulce? (S/N): n\n","¿Es de origen animal (carne, lácteos, huevo)? (S/N): n\n","¿Es una verdura/vegetal? (S/N): s\n","¿Se consume crudo habitualmente? (S/N): n\n","¡Pensaste en una verdura que suele cocinarse, como papa o zanahoria!\n","\n","==================================================\n","\n","¿Quieres jugar otra vez? (S/N): n\n","¡Gracias por jugar! ¡Hasta la próxima!\n"]}],"source":["def get_valid_input(think):\n","    while True:\n","        response = input(think).upper()\n","        if response in [\"S\", \"N\"]:\n","            return response\n","        print(\"Por favor, responde solo con 'S' (sí) o 'N' (no).\")\n","        print(\"Tu respuesta debe ser una sola letra: 'S' para sí o 'N' para no.\")\n","        print(\"Intenta de nuevo para continuar con el juego.\")\n","\n","\n","def juego_principal():\n","\n","    print(\"Bienvenido\")\n","    print(\"Piensa en cualquier cosa que se te ocurra y lo adivinaré\")\n","    print(\"Solo puedes responder con 'S' (sí) o 'N' (no)\")\n","    print(\"El objetivo es adivinar la categoría de tu pensamiento en menos de 20 preguntas\")\n","\n","    r = get_valid_input(\"¿Estás pensando en algo que existe dentro de nuestra realidad? (S/N): \")\n","    if r == \"S\":\n","        r = get_valid_input(\"¿Es algo que está vivo? (S/N): \")\n","        if r == \"S\":\n","            r = get_valid_input(\"¿Es un animal? (S/N): \")\n","            if r == \"S\":\n","                r = get_valid_input(\"¿Es un mamífero? (S/N): \")\n","                if r == \"S\":\n","                    r = get_valid_input(\"¿Es un animal que suele ser una mascota? (S/N): \")\n","                    if r == \"S\":\n","                        r = get_valid_input(\"¿Es un animal que ladra? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es un animal doméstico? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un animal comúnmente encontrado en casas? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un canino doméstico, como un perro!\")\n","                                else:\n","                                    print(\"¡Pensaste en un canino doméstico menos común, como un perro de trabajo o un lobo domesticado!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un animal que vive en manadas? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un canino salvaje que vive en manadas, como un lobo!\")\n","                                else:\n","                                    print(\"¡Pensaste en un canino salvaje solitario, como un zorro!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es un animal que maúlla? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un gato doméstico? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es un gato de raza, como un persa o un siamés? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un felino doméstico de raza!\")\n","                                    else:\n","                                        print(\"¡Pensaste en un gato doméstico común!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un felino grande, como un león o un tigre? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un felino salvaje grande, como un león o un tigre!\")\n","                                    else:\n","                                        print(\"¡Pensaste en un felino salvaje pequeño, como un lince o un ocelote!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un animal pequeño, como un hámster o un conejillo de indias? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es un roedor? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un pequeño mamífero roedor, como un hámster o un ratón!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro pequeño mamífero mascota, como un hurón!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un animal exótico, como un mono pequeño? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un mamífero mascota exótico, como un mono capuchino!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro mamífero mascota, como un conejo grande!\")\n","                    else:\n","                        r = get_valid_input(\"¿Es un animal que vive principalmente en la tierra? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es un animal grande, como un elefante o un rinoceronte? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un animal herbívoro? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un mamífero terrestre grande herbívoro, como un elefante o una jirafa!\")\n","                                else:\n","                                    print(\"¡Pensaste en un mamífero terrestre grande carnívoro, como un oso o un leopardo!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un animal que vive en madrigueras? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un mamífero terrestre pequeño que vive en madrigueras, como una ardilla o un topo!\")\n","                                else:\n","                                    print(\"¡Pensaste en un mamífero terrestre pequeño que no vive en madrigueras, como un zorro o un tejón!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es un animal que vive principalmente en el agua? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un mamífero marino grande, como una ballena? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un mamífero marino grande, como una ballena o un delfín!\")\n","                                else:\n","                                    print(\"¡Pensaste en un mamífero acuático más pequeño, como una nutria o una foca!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un animal que vive en árboles? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un mamífero arbóreo, como un mono o un perezoso!\")\n","                                else:\n","                                    print(\"¡Pensaste en un mamífero que vive en otro entorno, como un murciélago!\")\n","                else:\n","                    r = get_valid_input(\"¿Es un animal que vuela? (S/N): \")\n","                    if r == \"S\":\n","                        r = get_valid_input(\"¿Es un ave? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es un ave que puede volar? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un ave de presa, como un águila o un halcón? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un ave de presa, como un águila o un búho!\")\n","                                else:\n","                                    print(\"¡Pensaste en un ave voladora no depredadora, como un loro o un colibrí!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un ave acuática? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un ave acuática no voladora, como un pingüino!\")\n","                                else:\n","                                    print(\"¡Pensaste en un ave terrestre no voladora, como un avestruz o un emú!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es un insecto? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un insecto con alas coloridas? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un insecto volador colorido, como una mariposa o una libélula!\")\n","                                else:\n","                                    print(\"¡Pensaste en un insecto volador no colorido, como una abeja o una mosca!\")\n","                            else:\n","                                print(\"¡Pensaste en un mamífero volador, como un murciélago!\")\n","                    else:\n","                        r = get_valid_input(\"¿Es un animal que vive principalmente en el agua? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es un pez? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un pez que vive en el océano? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un pez marino, como un tiburón o un atún!\")\n","                                else:\n","                                    print(\"¡Pensaste en un pez de agua dulce, como una trucha o un pez tropical!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un anfibio? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es un anfibio que vive cerca del agua? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un anfibio acuático, como una rana o un tritón!\")\n","                                    else:\n","                                        print(\"¡Pensaste en un anfibio más terrestre, como un sapo!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un reptil? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un reptil acuático, como una tortuga marina o un cocodrilo!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro animal acuático, como un calamar o una medusa!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es un reptil? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un reptil con caparazón? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un reptil con caparazón, como una tortuga o un galápago!\")\n","                                else:\n","                                    print(\"¡Pensaste en un reptil sin caparazón, como una serpiente o un lagarto!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un insecto? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un insecto terrestre, como una hormiga o un escarabajo!\")\n","                                else:\n","                                    print(\"¡Pensaste en otro animal terrestre, como un ciempiés o una araña!\")\n","            else:\n","                r = get_valid_input(\"¿Es una planta? (S/N): \")\n","                if r == \"S\":\n","                    r = get_valid_input(\"¿Es una planta que produce frutas comestibles? (S/N): \")\n","                    if r == \"S\":\n","                        r = get_valid_input(\"¿Es un árbol? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Produce cítricos, como naranjas o limones? (S/N): \")\n","                            if r == \"S\":\n","                                print(\"¡Pensaste en un árbol frutal cítrico, como un naranjo o un limonero!\")\n","                            else:\n","                                print(\"¡Pensaste en un árbol frutal no cítrico, como un manzano o un peral!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es una planta que crece en el suelo? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Produce bayas? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en una planta de bayas, como una fresa o un arándano!\")\n","                                else:\n","                                    print(\"¡Pensaste en otra planta frutal de suelo, como una calabaza!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es una planta trepadora? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en una planta frutal trepadora, como un kiwi o una vid!\")\n","                                else:\n","                                    print(\"¡Pensaste en otra planta frutal no trepadora, como un arbusto frutal!\")\n","                    else:\n","                        r = get_valid_input(\"¿Es una planta grande, como un árbol? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es un árbol de hoja perenne? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un árbol con agujas, como un pino? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un árbol de hoja perenne con agujas, como un pino o un abeto!\")\n","                                else:\n","                                    print(\"¡Pensaste en un árbol de hoja perenne sin agujas, como un ciprés!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un árbol que produce flores vistosas? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un árbol caducifolio con flores, como un cerezo ornamental!\")\n","                                else:\n","                                    print(\"¡Pensaste en un árbol caducifolio sin flores vistosas, como un roble o un arce!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es una planta con flores? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es una flor cultivada para decoración? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en una planta con flores decorativas, como una rosa o un tulipán!\")\n","                                else:\n","                                    print(\"¡Pensaste en una planta con flores silvestres, como una margarita!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es una planta verde, como un helecho? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en una planta verde sin flores, como un helecho o un musgo!\")\n","                                else:\n","                                    print(\"¡Pensaste en otra planta sin flores, como un cactus o una suculenta!\")\n","                else:\n","                    r = get_valid_input(\"¿Es una persona? (S/N): \")\n","                    if r == \"S\":\n","                        r = get_valid_input(\"¿Es una persona famosa? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es una estrella deportiva? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un futbolista? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en una estrella del fútbol, como Messi o Ronaldo!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es de un deporte de equipo? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en una estrella deportiva de equipo, como un basquetbolista o tenista!\")\n","                                    else:\n","                                        print(\"¡Pensaste en una estrella deportiva individual, como un nadador o corredor!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es actor o actriz? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es principalmente de películas? (S/N): \")\n","                                    if r == \"S\":\n","                                        r = get_valid_input(\"¿Es de películas de acción o drama? (S/N): \")\n","                                        if r == \"S\":\n","                                            print(\"¡Pensaste en un actor/actriz de películas de acción o drama!\")\n","                                        else:\n","                                            print(\"¡Pensaste en un actor/actriz de comedias o películas familiares!\")\n","                                    else:\n","                                        r = get_valid_input(\"¿Es principalmente de series de televisión? (S/N): \")\n","                                        if r == \"S\":\n","                                            print(\"¡Pensaste en un actor/actriz de series de televisión!\")\n","                                        else:\n","                                            print(\"¡Pensaste en un actor/actriz de teatro o múltiples medios!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es músico o cantante? (S/N): \")\n","                                    if r == \"S\":\n","                                        r = get_valid_input(\"¿Es cantante solista? (S/N): \")\n","                                        if r == \"S\":\n","                                            r = get_valid_input(\"¿Canta música pop o comercial? (S/N): \")\n","                                            if r == \"S\":\n","                                                print(\"¡Pensaste en un cantante solista de música pop o comercial!\")\n","                                            else:\n","                                                print(\"¡Pensaste en un cantante solista de otro género musical!\")\n","                                        else:\n","                                            r = get_valid_input(\"¿Es parte de una banda o grupo? (S/N): \")\n","                                            if r == \"S\":\n","                                                print(\"¡Pensaste en un músico de una banda o grupo musical!\")\n","                                            else:\n","                                                print(\"¡Pensaste en un músico instrumentista o compositor!\")\n","                                    else:\n","                                        r = get_valid_input(\"¿Es una personalidad pública de medios? (S/N): \")\n","                                        if r == \"S\":\n","                                            r = get_valid_input(\"¿Es presentador de televisión? (S/N): \")\n","                                            if r == \"S\":\n","                                                print(\"¡Pensaste en un presentador de televisión o conductor de programa!\")\n","                                            else:\n","                                                print(\"¡Pensaste en una personalidad de redes sociales o influencer!\")\n","                                        else:\n","                                            r = get_valid_input(\"¿Es una figura política? (S/N): \")\n","                                            if r == \"S\":\n","                                                print(\"¡Pensaste en una personalidad política, como un presidente o político!\")\n","                                            else:\n","                                                print(\"¡Pensaste en otra personalidad pública, como un empresario o activista!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es alguien que conoces personalmente? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un familiar? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un familiar, como tu madre, padre o hermano!\")\n","                                else:\n","                                    print(\"¡Pensaste en un amigo o conocido!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es una persona histórica? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en una figura histórica, como un científico o líder del pasado!\")\n","                                else:\n","                                    print(\"¡Pensaste en una persona común o desconocida!\")\n","                    else:\n","                        r = get_valid_input(\"¿Es un microorganismo, como una bacteria o un hongo? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es un hongo visible, como un champiñón? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es comestible? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un hongo visible comestible, como un champiñón o una trufa!\")\n","                                else:\n","                                    print(\"¡Pensaste en un hongo visible no comestible, como un moho o un hongo venenoso!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es una bacteria? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en una bacteria, como una bacteria intestinal o patógena!\")\n","                                else:\n","                                    print(\"¡Pensaste en otro microorganismo, como un virus o un protozoo!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es algo que vive en el océano? (S/N): \")\n","                            if r == \"S\":\n","                                print(\"¡Pensaste en una forma de vida marina, como un coral o una esponja!\")\n","                            else:\n","                                print(\"¡Pensaste en otra forma de vida, como un liquen o una alga!\")\n","        else:\n","            r = get_valid_input(\"¿Es un objeto físico que puedes tocar? (S/N): \")\n","            if r == \"S\":\n","                # ALIMENTOS Y BEBIDAS\n","                r = get_valid_input(\"¿Es un alimento o una bebida? (S/N): \")\n","                if r == \"S\":\n","                    r = get_valid_input(\"¿Es algo que se come (sólido)? (S/N): \")\n","                    if r == \"S\":\n","                        r = get_valid_input(\"¿Tiene sabor principalmente dulce? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es de panadería o pastelería? (S/N): \")\n","                            if r == \"S\":\n","                                print(\"¡Pensaste en un alimento dulce de panadería/pastelería, como un pan dulce o un pastel!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es una fruta? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es cítrica, como naranja o limón? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en una fruta cítrica, como una naranja o un limón!\")\n","                                    else:\n","                                        print(\"¡Pensaste en una fruta dulce, como una manzana, plátano o mango!\")\n","                                else:\n","                                    print(\"¡Pensaste en un postre dulce, como un chocolate o una gelatina!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es de origen animal (carne, lácteos, huevo)? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es carne? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es carne roja? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en una carne roja, como res o cordero!\")\n","                                    else:\n","                                        print(\"¡Pensaste en una carne blanca, como pollo o pescado!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un lácteo, como queso o yogurt? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un lácteo, como queso, leche o yogurt!\")\n","                                    else:\n","                                        print(\"¡Pensaste en un alimento de origen animal no cárnico, como huevo!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es una verdura/vegetal? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Se consume crudo habitualmente? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en una verdura que suele comerse cruda, como lechuga o jitomate!\")\n","                                    else:\n","                                        print(\"¡Pensaste en una verdura que suele cocinarse, como papa o zanahoria!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un cereal o leguminosa (arroz, frijol, maíz)? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un cereal o leguminosa, como arroz, frijol o maíz!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro alimento salado, como pasta o frutos secos!\")\n","                    else:\n","                        # BEBIDAS\n","                        r = get_valid_input(\"¿Contiene cafeína? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Se consume caliente usualmente? (S/N): \")\n","                            if r == \"S\":\n","                                print(\"¡Pensaste en una bebida con cafeína caliente, como café o té!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es carbonatada? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un refresco con cafeína!\")\n","                                else:\n","                                    print(\"¡Pensaste en una bebida con cafeína fría, como té helado o bebida energética!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es un jugo de fruta? (S/N): \")\n","                            if r == \"S\":\n","                                print(\"¡Pensaste en un jugo de fruta, como naranja o manzana!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es láctea o a base de plantas (leche/“leche” vegetal)? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en una bebida láctea o vegetal, como leche, bebida de soya o de almendra!\")\n","                                else:\n","                                    print(\"¡Pensaste en otra bebida sin cafeína, como agua natural o saborizada!\")\n","                else:\n","                    # OBJETOS (FLUJO ORIGINAL)\n","                    r = get_valid_input(\"¿Es algo que se encuentra principalmente en interiores? (S/N): \")\n","                    if r == \"S\":\n","                        r = get_valid_input(\"¿Es algo que se usa en la cocina? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es un electrodoméstico? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un electrodoméstico grande, como una nevera? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Se usa para cocinar? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un electrodoméstico grande de cocina, como un horno o una estufa!\")\n","                                    else:\n","                                        print(\"¡Pensaste en un electrodoméstico grande de cocina no para cocinar, como una nevera o un congelador!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Se usa para preparar bebidas? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un electrodoméstico pequeño para bebidas, como una cafetera o una licuadora!\")\n","                                    else:\n","                                        print(\"¡Pensaste en un electrodoméstico pequeño de cocina, como una tostadora o un microondas!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un utensilio de cocina? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es un utensilio para cortar? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un utensilio de cocina para cortar, como un cuchillo o un rallador!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro utensilio de cocina, como una cuchara o una sartén!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un recipiente? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un recipiente de cocina, como una olla o un tazón!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro objeto de cocina, como una mesa o un trapo!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es algo que se usa en el baño? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es algo que se usa para higiene personal? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es algo que se usa con agua? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un objeto de higiene de baño con agua, como una ducha o un cepillo de dientes!\")\n","                                    else:\n","                                        print(\"¡Pensaste en un objeto de higiene de baño sin agua, como un peine o una afeitadora!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un accesorio decorativo? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un objeto decorativo de baño, como un espejo o una cortina de ducha!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro objeto de baño, como una alfombrilla o un toallero!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un mueble? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es un mueble para sentarse? (S/N): \")\n","                                    if r == \"S\":\n","                                        r = get_valid_input(\"¿Es un mueble individual, como una silla? (S/N): \")\n","                                        if r == \"S\":\n","                                            print(\"¡Pensaste en un mueble individual para sentarse, como una silla o un taburete!\")\n","                                        else:\n","                                            print(\"¡Pensaste en un mueble para varios, como un sofá o un banco!\")\n","                                    else:\n","                                        r = get_valid_input(\"¿Es un mueble de almacenamiento? (S/N): \")\n","                                        if r == \"S\":\n","                                            print(\"¡Pensaste en un mueble de almacenamiento, como un armario o una estantería!\")\n","                                        else:\n","                                            print(\"¡Pensaste en otro mueble, como una mesa o una cama!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un objeto decorativo? (S/N): \")\n","                                    if r == \"S\":\n","                                        r = get_valid_input(\"¿Es algo que se cuelga en la pared? (S/N): \")\n","                                        if r == \"S\":\n","                                            print(\"¡Pensaste en un objeto decorativo de pared, como un cuadro o un espejo!\")\n","                                        else:\n","                                            print(\"¡Pensaste en un objeto decorativo no de pared, como una lámpara o una estatua!\")\n","                                    else:\n","                                        r = get_valid_input(\"¿Es un dispositivo electrónico? (S/N): \")\n","                                        if r == \"S\":\n","                                            print(\"¡Pensaste en un dispositivo electrónico de interior, como un televisor o un ordenador!\")\n","                                        else:\n","                                            print(\"¡Pensaste en otro objeto de interior, como un libro o un juguete!\")\n","                    else:\n","                        r = get_valid_input(\"¿Es algo natural, como una roca o un río? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es un cuerpo de agua? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un cuerpo de agua grande, como un océano? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un cuerpo de agua grande, como un océano o un lago!\")\n","                                else:\n","                                    print(\"¡Pensaste en un cuerpo de agua pequeño, como un río o un arroyo!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es una formación geológica? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es una formación elevada, como una montaña? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en una formación geológica elevada, como una montaña o una colina!\")\n","                                    else:\n","                                        print(\"¡Pensaste en una formación geológica no elevada, como una cueva o un cañón!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un fenómeno celeste, como una estrella? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un cuerpo celeste, como una estrella o un planeta!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro elemento natural, como una nube o un volcán!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es un vehículo? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un vehículo de transporte personal? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es un vehículo motorizado? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un vehículo personal motorizado, como un coche o una motocicleta!\")\n","                                    else:\n","                                        print(\"¡Pensaste en un vehículo personal no motorizado, como una bicicleta o un patinete!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un vehículo de transporte público? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un vehículo de transporte público, como un autobús o un tren!\")\n","                                    else:\n","                                        print(\"¡Pensaste en un vehículo grande, como un camión o un barco!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un edificio o estructura? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es un edificio residencial? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un edificio residencial, como una casa o un apartamento!\")\n","                                    else:\n","                                        print(\"¡Pensaste en un edificio no residencial, como un puente o un estadio!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un objeto deportivo? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un objeto deportivo al aire libre, como una pelota o una red!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro objeto artificial al aire libre, como un poste de luz o una estatua!\")\n","            else:\n","                r = get_valid_input(\"¿Es un concepto o idea, como el amor o el tiempo? (S/N): \")\n","                if r == \"S\":\n","                    r = get_valid_input(\"¿Es una emoción o sentimiento? (S/N): \")\n","                    if r == \"S\":\n","                        r = get_valid_input(\"¿Es una emoción positiva, como el amor o la felicidad? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es una emoción asociada con logros, como el orgullo? (S/N): \")\n","                            if r == \"S\":\n","                                print(\"¡Pensaste en una emoción positiva de logro, como el orgullo o la satisfacción!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es una emoción asociada con relaciones, como el amor? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en una emoción positiva relacional, como el amor o la amistad!\")\n","                                else:\n","                                    print(\"¡Pensaste en otra emoción positiva, como la alegría o la esperanza!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es una emoción asociada con pérdida, como la tristeza? (S/N): \")\n","                            if r == \"S\":\n","                                print(\"¡Pensaste en una emoción negativa de pérdida, como la tristeza o el duelo!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es una emoción asociada con peligro, como el miedo? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en una emoción negativa de peligro, como el miedo o la ansiedad!\")\n","                                else:\n","                                    print(\"¡Pensaste en otra emoción negativa, como la ira o la frustración!\")\n","                    else:\n","                        r = get_valid_input(\"¿Es un concepto relacionado con el arte, como la música o la pintura? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es la música o algo relacionado con ella? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es la música como una pieza o interpretación audible? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es un género musical moderno, como pop o rock? (S/N): \")\n","                                    if r == \"S\":\n","                                        r = get_valid_input(\"¿Es un género bailable, como pop o electrónica? (S/N): \")\n","                                        if r == \"S\":\n","                                            print(\"¡Pensaste en un género musical moderno bailable, como pop o música electrónica!\")\n","                                        else:\n","                                            print(\"¡Pensaste en un género musical moderno no bailable, como rock o hip-hop!\")\n","                                    else:\n","                                        r = get_valid_input(\"¿Es un género clásico o tradicional, como música clásica o folclórica? (S/N): \")\n","                                        if r == \"S\":\n","                                            print(\"¡Pensaste en un género musical clásico o tradicional, como música clásica o folclórica!\")\n","                                        else:\n","                                            print(\"¡Pensaste en otro género musical, como jazz o blues!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un concepto teórico de la música, como una escala o un acorde? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un concepto teórico musical, como una escala o un acorde!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro aspecto abstracto de la música, como el ritmo o la armonía!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un concepto visual, como la pintura o la escultura? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es bidimensional, como una pintura o un dibujo? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un arte visual bidimensional, como una pintura o un dibujo!\")\n","                                    else:\n","                                        print(\"¡Pensaste en un arte visual tridimensional, como una escultura o una instalación!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un concepto literario, como la poesía o la narrativa? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un concepto literario, como la poesía o una novela!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro concepto artístico, como la danza o el teatro!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es un concepto científico, como la gravedad o el tiempo? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un concepto físico, como la energía? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es un concepto relacionado con la energía, como la electricidad? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un concepto físico de energía, como la electricidad o la termodinámica!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro concepto físico, como la gravedad o el magnetismo!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un concepto relacionado con la vida, como el ADN? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un concepto científico biológico, como la evolución o el ADN!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro concepto científico, como la ecología o la genética!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un concepto social, como la justicia? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es un concepto político, como la democracia? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un concepto político, como la democracia o el socialismo!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro concepto social, como la justicia o la igualdad!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un concepto filosófico, como la verdad? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un concepto filosófico, como la verdad o la existencia!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro concepto abstracto, como el destino o la moral!\")\n","                else:\n","                    r = get_valid_input(\"¿Es un fenómeno natural, como el viento o la lluvia? (S/N): \")\n","                    if r == \"S\":\n","                        r = get_valid_input(\"¿Es un fenómeno meteorológico? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es un fenómeno relacionado con la precipitación, como la lluvia? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es líquido, como la lluvia? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un fenómeno meteorológico líquido, como la lluvia o el rocío!\")\n","                                else:\n","                                    print(\"¡Pensaste en un fenómeno meteorológico sólido, como la nieve o el granizo!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un fenómeno relacionado con el viento? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un fenómeno de viento, como un huracán o una brisa!\")\n","                                else:\n","                                    print(\"¡Pensaste en otro fenómeno meteorológico, como un rayo o una niebla!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es un fenómeno óptico, como la luz o un arcoíris? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es la luz como un fenómeno observable, como la luz solar? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es luz emitida por una fuente natural, como el sol? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en luz emitida por una fuente natural, como la luz solar o la luz estelar!\")\n","                                    else:\n","                                        print(\"¡Pensaste en luz reflejada o dispersada, como un arcoíris o un resplandor!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un concepto relacionado con la luz, como un fotón? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un concepto científico de la luz, como un fotón o un espectro!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro fenómeno óptico, como una sombra o un reflejo!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un fenómeno geológico, como un terremoto? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un fenómeno geológico, como un terremoto o un maremoto!\")\n","                                else:\n","                                    print(\"¡Pensaste en otro fenómeno natural, como un géiser o una aurora!\")\n","                    else:\n","                        r = get_valid_input(\"¿Es algo que se percibe con los sentidos, como un olor o un sonido? (S/N): \")\n","                        if r == \"S\":\n","                            r = get_valid_input(\"¿Es un fenómeno auditivo, como un sonido o un ruido? (S/N): \")\n","                            if r == \"S\":\n","                                r = get_valid_input(\"¿Es un sonido producido por la naturaleza, como el trueno? (S/N): \")\n","                                if r == \"S\":\n","                                    print(\"¡Pensaste en un sonido natural, como el trueno o el canto de un pájaro!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un sonido producido por humanos, como el habla? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un sonido humano, como el habla o una sirena!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro sonido artificial, como el ruido de un motor!\")\n","                            else:\n","                                r = get_valid_input(\"¿Es un fenómeno olfativo, como un olor? (S/N): \")\n","                                if r == \"S\":\n","                                    r = get_valid_input(\"¿Es un olor agradable, como el de una flor? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un olor agradable, como el de una flor o un perfume!\")\n","                                    else:\n","                                        print(\"¡Pensaste en un olor desagradable, como el de basura o químicos!\")\n","                                else:\n","                                    r = get_valid_input(\"¿Es un fenómeno táctil, como el calor o el frío? (S/N): \")\n","                                    if r == \"S\":\n","                                        print(\"¡Pensaste en un fenómeno táctil, como el calor o una textura!\")\n","                                    else:\n","                                        print(\"¡Pensaste en otro fenómeno sensorial, como un sabor o una sensación visual!\")\n","                        else:\n","                            r = get_valid_input(\"¿Es un fenómeno temporal, como el pasado o el futuro? (S/N): \")\n","                            if r == \"S\":\n","                                print(\"¡Pensaste en un fenómeno temporal, como el pasado o el futuro!\")\n","                            else:\n","                                print(\"¡Pensaste en otro fenómeno no físico ni sensorial, como una sombra o un eco!\")\n","    else:\n","        r = get_valid_input(\"¿Es algo de ficción, como un personaje o un lugar imaginario? (S/N): \")\n","        if r == \"S\":\n","            r = get_valid_input(\"¿Es un personaje ficticio? (S/N): \")\n","            if r == \"S\":\n","                r = get_valid_input(\"¿Es un personaje de un libro? (S/N): \")\n","                if r == \"S\":\n","                    r = get_valid_input(\"¿Es un personaje de fantasía? (S/N): \")\n","                    if r == \"S\":\n","                        print(\"¡Pensaste en un personaje ficticio de fantasía de un libro, como Harry Potter o Frodo!\")\n","                    else:\n","                        print(\"¡Pensaste en un personaje ficticio de un libro no de fantasía, como Don Quijote!\")\n","                else:\n","                    r = get_valid_input(\"¿Es un personaje de una película o serie? (S/N): \")\n","                    if r == \"S\":\n","                        r = get_valid_input(\"¿Es un personaje de ciencia ficción? (S/N): \")\n","                        if r == \"S\":\n","                            print(\"¡Pensaste en un personaje de ciencia ficción, como Darth Vader o Spock!\")\n","                        else:\n","                            print(\"¡Pensaste en un personaje de película o serie no de ciencia ficción, como Walter White!\")\n","                    else:\n","                        r = get_valid_input(\"¿Es un personaje de un videojuego? (S/N): \")\n","                        if r == \"S\":\n","                            print(\"¡Pensaste en un personaje de videojuego, como Mario o Lara Croft!\")\n","                        else:\n","                            print(\"¡Pensaste en un personaje ficticio de otro medio, como un mito o una leyenda!\")\n","            else:\n","                r = get_valid_input(\"¿Es un lugar ficticio? (S/N): \")\n","                if r == \"S\":\n","                    r = get_valid_input(\"¿Es un lugar de fantasía, como un reino mágico? (S/N): \")\n","                    if r == \"S\":\n","                        print(\"¡Pensaste en un lugar ficticio de fantasía, como Narnia o el Reino de Oz!\")\n","                    else:\n","                        print(\"¡Pensaste en un lugar ficticio no de fantasía, como Gotham o Springfield!\")\n","                else:\n","                    r = get_valid_input(\"¿Es un objeto ficticio? (S/N): \")\n","                    if r == \"S\":\n","                        print(\"¡Pensaste en un objeto ficticio, como una nave espacial o un anillo mágico!\")\n","                    else:\n","                        print(\"¡Pensaste en otra cosa ficticia, como un evento o un idioma ficticio!\")\n","        else:\n","            r = get_valid_input(\"¿Es un concepto matemático, como un número o una ecuación? (S/N): \")\n","            if r == \"S\":\n","                r = get_valid_input(\"¿Es un número, como pi o el infinito? (S/N): \")\n","                if r == \"S\":\n","                    r = get_valid_input(\"¿Es un número finito? (S/N): \")\n","                    if r == \"S\":\n","                        print(\"¡Pensaste en un número finito, como el cero o el siete!\")\n","                    else:\n","                        print(\"¡Pensaste en un número infinito, como el infinito o pi!\")\n","                else:\n","                    r = get_valid_input(\"¿Es una ecuación o fórmula? (S/N): \")\n","                    if r == \"S\":\n","                        print(\"¡Pensaste en una ecuación o fórmula matemática, como E=mc²!\")\n","                    else:\n","                        print(\"¡Pensaste en otro concepto matemático, como un teorema o una función!\")\n","            else:\n","                r = get_valid_input(\"¿Es algo que aparece en sueños o la imaginación? (S/N): \")\n","                if r == \"S\":\n","                    print(\"¡Pensaste en algo imaginario, como un sueño o una fantasía!\")\n","                else:\n","                    print(\"¡Pensaste en otra cosa no real, como un concepto filosófico o una paradoja!\")\n","\n","\n","def main():\n","    while True:\n","        juego_principal()\n","        print(\"\\n\" + \"=\"*50)\n","        jugar_otra_vez = get_valid_input(\"\\n¿Quieres jugar otra vez? (S/N): \")\n","        if jugar_otra_vez == \"N\":\n","            print(\"¡Gracias por jugar! ¡Hasta la próxima!\")\n","            break\n","        print(\"\\n\")\n","\n","\n","if __name__ == \"__main__\":\n","    main()"]}]}
+def get_valid_input(think):
+    while True:
+        response = input(think).upper()
+        if response in ["S", "N"]:
+            return response
+        print("Por favor, responde solo con 'S' (sí) o 'N' (no).")
+        print("Tu respuesta debe ser una sola letra: 'S' para sí o 'N' para no.")
+        print("Intenta de nuevo para continuar con el juego.")
+
+
+def juego_principal():
+
+    print("Bienvenido")
+    print("Piensa en cualquier cosa que se te ocurra y lo adivinaré")
+    print("Solo puedes responder con 'S' (sí) o 'N' (no)")
+    print("El objetivo es adivinar la categoría de tu pensamiento en menos de 20 preguntas")
+
+    r = get_valid_input("¿Estás pensando en algo que existe dentro de nuestra realidad? (S/N): ")
+    if r == "S":
+        r = get_valid_input("¿Es algo que está vivo? (S/N): ")
+        if r == "S":
+            r = get_valid_input("¿Es un animal? (S/N): ")
+            if r == "S":
+                r = get_valid_input("¿Es un mamífero? (S/N): ")
+                if r == "S":
+                    r = get_valid_input("¿Es un animal que suele ser una mascota? (S/N): ")
+                    if r == "S":
+                        r = get_valid_input("¿Es un animal que ladra? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es un animal doméstico? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un animal comúnmente encontrado en casas? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un canino doméstico, como un perro!")
+                                else:
+                                    print("¡Pensaste en un canino doméstico menos común, como un perro de trabajo o un lobo domesticado!")
+                            else:
+                                r = get_valid_input("¿Es un animal que vive en manadas? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un canino salvaje que vive en manadas, como un lobo!")
+                                else:
+                                    print("¡Pensaste en un canino salvaje solitario, como un zorro!")
+                        else:
+                            r = get_valid_input("¿Es un animal que maúlla? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un gato doméstico? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es un gato de raza, como un persa o un siamés? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un felino doméstico de raza!")
+                                    else:
+                                        print("¡Pensaste en un gato doméstico común!")
+                                else:
+                                    r = get_valid_input("¿Es un felino grande, como un león o un tigre? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un felino salvaje grande, como un león o un tigre!")
+                                    else:
+                                        print("¡Pensaste en un felino salvaje pequeño, como un lince o un ocelote!")
+                            else:
+                                r = get_valid_input("¿Es un animal pequeño, como un hámster o un conejillo de indias? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es un roedor? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un pequeño mamífero roedor, como un hámster o un ratón!")
+                                    else:
+                                        print("¡Pensaste en otro pequeño mamífero mascota, como un hurón!")
+                                else:
+                                    r = get_valid_input("¿Es un animal exótico, como un mono pequeño? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un mamífero mascota exótico, como un mono capuchino!")
+                                    else:
+                                        print("¡Pensaste en otro mamífero mascota, como un conejo grande!")
+                    else:
+                        r = get_valid_input("¿Es un animal que vive principalmente en la tierra? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es un animal grande, como un elefante o un rinoceronte? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un animal herbívoro? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un mamífero terrestre grande herbívoro, como un elefante o una jirafa!")
+                                else:
+                                    print("¡Pensaste en un mamífero terrestre grande carnívoro, como un oso o un leopardo!")
+                            else:
+                                r = get_valid_input("¿Es un animal que vive en madrigueras? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un mamífero terrestre pequeño que vive en madrigueras, como una ardilla o un topo!")
+                                else:
+                                    print("¡Pensaste en un mamífero terrestre pequeño que no vive en madrigueras, como un zorro o un tejón!")
+                        else:
+                            r = get_valid_input("¿Es un animal que vive principalmente en el agua? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un mamífero marino grande, como una ballena? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un mamífero marino grande, como una ballena o un delfín!")
+                                else:
+                                    print("¡Pensaste en un mamífero acuático más pequeño, como una nutria o una foca!")
+                            else:
+                                r = get_valid_input("¿Es un animal que vive en árboles? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un mamífero arbóreo, como un mono o un perezoso!")
+                                else:
+                                    print("¡Pensaste en un mamífero que vive en otro entorno, como un murciélago!")
+                else:
+                    r = get_valid_input("¿Es un animal que vuela? (S/N): ")
+                    if r == "S":
+                        r = get_valid_input("¿Es un ave? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es un ave que puede volar? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un ave de presa, como un águila o un halcón? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un ave de presa, como un águila o un búho!")
+                                else:
+                                    print("¡Pensaste en un ave voladora no depredadora, como un loro o un colibrí!")
+                            else:
+                                r = get_valid_input("¿Es un ave acuática? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un ave acuática no voladora, como un pingüino!")
+                                else:
+                                    print("¡Pensaste en un ave terrestre no voladora, como un avestruz o un emú!")
+                        else:
+                            r = get_valid_input("¿Es un insecto? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un insecto con alas coloridas? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un insecto volador colorido, como una mariposa o una libélula!")
+                                else:
+                                    print("¡Pensaste en un insecto volador no colorido, como una abeja o una mosca!")
+                            else:
+                                print("¡Pensaste en un mamífero volador, como un murciélago!")
+                    else:
+                        r = get_valid_input("¿Es un animal que vive principalmente en el agua? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es un pez? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un pez que vive en el océano? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un pez marino, como un tiburón o un atún!")
+                                else:
+                                    print("¡Pensaste en un pez de agua dulce, como una trucha o un pez tropical!")
+                            else:
+                                r = get_valid_input("¿Es un anfibio? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es un anfibio que vive cerca del agua? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un anfibio acuático, como una rana o un tritón!")
+                                    else:
+                                        print("¡Pensaste en un anfibio más terrestre, como un sapo!")
+                                else:
+                                    r = get_valid_input("¿Es un reptil? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un reptil acuático, como una tortuga marina o un cocodrilo!")
+                                    else:
+                                        print("¡Pensaste en otro animal acuático, como un calamar o una medusa!")
+                        else:
+                            r = get_valid_input("¿Es un reptil? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un reptil con caparazón? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un reptil con caparazón, como una tortuga o un galápago!")
+                                else:
+                                    print("¡Pensaste en un reptil sin caparazón, como una serpiente o un lagarto!")
+                            else:
+                                r = get_valid_input("¿Es un insecto? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un insecto terrestre, como una hormiga o un escarabajo!")
+                                else:
+                                    print("¡Pensaste en otro animal terrestre, como un ciempiés o una araña!")
+            else:
+                r = get_valid_input("¿Es una planta? (S/N): ")
+                if r == "S":
+                    r = get_valid_input("¿Es una planta que produce frutas comestibles? (S/N): ")
+                    if r == "S":
+                        r = get_valid_input("¿Es un árbol? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Produce cítricos, como naranjas o limones? (S/N): ")
+                            if r == "S":
+                                print("¡Pensaste en un árbol frutal cítrico, como un naranjo o un limonero!")
+                            else:
+                                print("¡Pensaste en un árbol frutal no cítrico, como un manzano o un peral!")
+                        else:
+                            r = get_valid_input("¿Es una planta que crece en el suelo? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Produce bayas? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en una planta de bayas, como una fresa o un arándano!")
+                                else:
+                                    print("¡Pensaste en otra planta frutal de suelo, como una calabaza!")
+                            else:
+                                r = get_valid_input("¿Es una planta trepadora? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en una planta frutal trepadora, como un kiwi o una vid!")
+                                else:
+                                    print("¡Pensaste en otra planta frutal no trepadora, como un arbusto frutal!")
+                    else:
+                        r = get_valid_input("¿Es una planta grande, como un árbol? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es un árbol de hoja perenne? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un árbol con agujas, como un pino? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un árbol de hoja perenne con agujas, como un pino o un abeto!")
+                                else:
+                                    print("¡Pensaste en un árbol de hoja perenne sin agujas, como un ciprés!")
+                            else:
+                                r = get_valid_input("¿Es un árbol que produce flores vistosas? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un árbol caducifolio con flores, como un cerezo ornamental!")
+                                else:
+                                    print("¡Pensaste en un árbol caducifolio sin flores vistosas, como un roble o un arce!")
+                        else:
+                            r = get_valid_input("¿Es una planta con flores? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es una flor cultivada para decoración? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en una planta con flores decorativas, como una rosa o un tulipán!")
+                                else:
+                                    print("¡Pensaste en una planta con flores silvestres, como una margarita!")
+                            else:
+                                r = get_valid_input("¿Es una planta verde, como un helecho? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en una planta verde sin flores, como un helecho o un musgo!")
+                                else:
+                                    print("¡Pensaste en otra planta sin flores, como un cactus o una suculenta!")
+                else:
+                    r = get_valid_input("¿Es una persona? (S/N): ")
+                    if r == "S":
+                        r = get_valid_input("¿Es una persona famosa? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es una estrella deportiva? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un futbolista? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en una estrella del fútbol, como Messi o Ronaldo!")
+                                else:
+                                    r = get_valid_input("¿Es de un deporte de equipo? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en una estrella deportiva de equipo, como un basquetbolista o tenista!")
+                                    else:
+                                        print("¡Pensaste en una estrella deportiva individual, como un nadador o corredor!")
+                            else:
+                                r = get_valid_input("¿Es actor o actriz? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es principalmente de películas? (S/N): ")
+                                    if r == "S":
+                                        r = get_valid_input("¿Es de películas de acción o drama? (S/N): ")
+                                        if r == "S":
+                                            print("¡Pensaste en un actor/actriz de películas de acción o drama!")
+                                        else:
+                                            print("¡Pensaste en un actor/actriz de comedias o películas familiares!")
+                                    else:
+                                        r = get_valid_input("¿Es principalmente de series de televisión? (S/N): ")
+                                        if r == "S":
+                                            print("¡Pensaste en un actor/actriz de series de televisión!")
+                                        else:
+                                            print("¡Pensaste en un actor/actriz de teatro o múltiples medios!")
+                                else:
+                                    r = get_valid_input("¿Es músico o cantante? (S/N): ")
+                                    if r == "S":
+                                        r = get_valid_input("¿Es cantante solista? (S/N): ")
+                                        if r == "S":
+                                            r = get_valid_input("¿Canta música pop o comercial? (S/N): ")
+                                            if r == "S":
+                                                print("¡Pensaste en un cantante solista de música pop o comercial!")
+                                            else:
+                                                print("¡Pensaste en un cantante solista de otro género musical!")
+                                        else:
+                                            r = get_valid_input("¿Es parte de una banda o grupo? (S/N): ")
+                                            if r == "S":
+                                                print("¡Pensaste en un músico de una banda o grupo musical!")
+                                            else:
+                                                print("¡Pensaste en un músico instrumentista o compositor!")
+                                    else:
+                                        r = get_valid_input("¿Es una personalidad pública de medios? (S/N): ")
+                                        if r == "S":
+                                            r = get_valid_input("¿Es presentador de televisión? (S/N): ")
+                                            if r == "S":
+                                                print("¡Pensaste en un presentador de televisión o conductor de programa!")
+                                            else:
+                                                print("¡Pensaste en una personalidad de redes sociales o influencer!")
+                                        else:
+                                            r = get_valid_input("¿Es una figura política? (S/N): ")
+                                            if r == "S":
+                                                print("¡Pensaste en una personalidad política, como un presidente o político!")
+                                            else:
+                                                print("¡Pensaste en otra personalidad pública, como un empresario o activista!")
+                        else:
+                            r = get_valid_input("¿Es alguien que conoces personalmente? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un familiar? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un familiar, como tu madre, padre o hermano!")
+                                else:
+                                    print("¡Pensaste en un amigo o conocido!")
+                            else:
+                                r = get_valid_input("¿Es una persona histórica? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en una figura histórica, como un científico o líder del pasado!")
+                                else:
+                                    print("¡Pensaste en una persona común o desconocida!")
+                    else:
+                        r = get_valid_input("¿Es un microorganismo, como una bacteria o un hongo? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es un hongo visible, como un champiñón? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es comestible? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un hongo visible comestible, como un champiñón o una trufa!")
+                                else:
+                                    print("¡Pensaste en un hongo visible no comestible, como un moho o un hongo venenoso!")
+                            else:
+                                r = get_valid_input("¿Es una bacteria? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en una bacteria, como una bacteria intestinal o patógena!")
+                                else:
+                                    print("¡Pensaste en otro microorganismo, como un virus o un protozoo!")
+                        else:
+                            r = get_valid_input("¿Es algo que vive en el océano? (S/N): ")
+                            if r == "S":
+                                print("¡Pensaste en una forma de vida marina, como un coral o una esponja!")
+                            else:
+                                print("¡Pensaste en otra forma de vida, como un liquen o una alga!")
+        else:
+            r = get_valid_input("¿Es un objeto físico que puedes tocar? (S/N): ")
+            if r == "S":
+                # ALIMENTOS Y BEBIDAS
+                r = get_valid_input("¿Es un alimento o una bebida? (S/N): ")
+                if r == "S":
+                    r = get_valid_input("¿Es algo que se come (sólido)? (S/N): ")
+                    if r == "S":
+                        r = get_valid_input("¿Tiene sabor principalmente dulce? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es de panadería o pastelería? (S/N): ")
+                            if r == "S":
+                                print("¡Pensaste en un alimento dulce de panadería/pastelería, como un pan dulce o un pastel!")
+                            else:
+                                r = get_valid_input("¿Es una fruta? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es cítrica, como naranja o limón? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en una fruta cítrica, como una naranja o un limón!")
+                                    else:
+                                        print("¡Pensaste en una fruta dulce, como una manzana, plátano o mango!")
+                                else:
+                                    print("¡Pensaste en un postre dulce, como un chocolate o una gelatina!")
+                        else:
+                            r = get_valid_input("¿Es de origen animal (carne, lácteos, huevo)? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es carne? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es carne roja? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en una carne roja, como res o cordero!")
+                                    else:
+                                        print("¡Pensaste en una carne blanca, como pollo o pescado!")
+                                else:
+                                    r = get_valid_input("¿Es un lácteo, como queso o yogurt? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un lácteo, como queso, leche o yogurt!")
+                                    else:
+                                        print("¡Pensaste en un alimento de origen animal no cárnico, como huevo!")
+                            else:
+                                r = get_valid_input("¿Es una verdura/vegetal? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Se consume crudo habitualmente? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en una verdura que suele comerse cruda, como lechuga o jitomate!")
+                                    else:
+                                        print("¡Pensaste en una verdura que suele cocinarse, como papa o zanahoria!")
+                                else:
+                                    r = get_valid_input("¿Es un cereal o leguminosa (arroz, frijol, maíz)? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un cereal o leguminosa, como arroz, frijol o maíz!")
+                                    else:
+                                        print("¡Pensaste en otro alimento salado, como pasta o frutos secos!")
+                    else:
+                        # BEBIDAS
+                        r = get_valid_input("¿Contiene cafeína? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Se consume caliente usualmente? (S/N): ")
+                            if r == "S":
+                                print("¡Pensaste en una bebida con cafeína caliente, como café o té!")
+                            else:
+                                r = get_valid_input("¿Es carbonatada? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un refresco con cafeína!")
+                                else:
+                                    print("¡Pensaste en una bebida con cafeína fría, como té helado o bebida energética!")
+                        else:
+                            r = get_valid_input("¿Es un jugo de fruta? (S/N): ")
+                            if r == "S":
+                                print("¡Pensaste en un jugo de fruta, como naranja o manzana!")
+                            else:
+                                r = get_valid_input("¿Es láctea o a base de plantas (leche/“leche” vegetal)? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en una bebida láctea o vegetal, como leche, bebida de soya o de almendra!")
+                                else:
+                                    print("¡Pensaste en otra bebida sin cafeína, como agua natural o saborizada!")
+                else:
+                    # OBJETOS (FLUJO ORIGINAL)
+                    r = get_valid_input("¿Es algo que se encuentra principalmente en interiores? (S/N): ")
+                    if r == "S":
+                        r = get_valid_input("¿Es algo que se usa en la cocina? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es un electrodoméstico? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un electrodoméstico grande, como una nevera? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Se usa para cocinar? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un electrodoméstico grande de cocina, como un horno o una estufa!")
+                                    else:
+                                        print("¡Pensaste en un electrodoméstico grande de cocina no para cocinar, como una nevera o un congelador!")
+                                else:
+                                    r = get_valid_input("¿Se usa para preparar bebidas? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un electrodoméstico pequeño para bebidas, como una cafetera o una licuadora!")
+                                    else:
+                                        print("¡Pensaste en un electrodoméstico pequeño de cocina, como una tostadora o un microondas!")
+                            else:
+                                r = get_valid_input("¿Es un utensilio de cocina? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es un utensilio para cortar? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un utensilio de cocina para cortar, como un cuchillo o un rallador!")
+                                    else:
+                                        print("¡Pensaste en otro utensilio de cocina, como una cuchara o una sartén!")
+                                else:
+                                    r = get_valid_input("¿Es un recipiente? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un recipiente de cocina, como una olla o un tazón!")
+                                    else:
+                                        print("¡Pensaste en otro objeto de cocina, como una mesa o un trapo!")
+                        else:
+                            r = get_valid_input("¿Es algo que se usa en el baño? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es algo que se usa para higiene personal? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es algo que se usa con agua? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un objeto de higiene de baño con agua, como una ducha o un cepillo de dientes!")
+                                    else:
+                                        print("¡Pensaste en un objeto de higiene de baño sin agua, como un peine o una afeitadora!")
+                                else:
+                                    r = get_valid_input("¿Es un accesorio decorativo? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un objeto decorativo de baño, como un espejo o una cortina de ducha!")
+                                    else:
+                                        print("¡Pensaste en otro objeto de baño, como una alfombrilla o un toallero!")
+                            else:
+                                r = get_valid_input("¿Es un mueble? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es un mueble para sentarse? (S/N): ")
+                                    if r == "S":
+                                        r = get_valid_input("¿Es un mueble individual, como una silla? (S/N): ")
+                                        if r == "S":
+                                            print("¡Pensaste en un mueble individual para sentarse, como una silla o un taburete!")
+                                        else:
+                                            print("¡Pensaste en un mueble para varios, como un sofá o un banco!")
+                                    else:
+                                        r = get_valid_input("¿Es un mueble de almacenamiento? (S/N): ")
+                                        if r == "S":
+                                            print("¡Pensaste en un mueble de almacenamiento, como un armario o una estantería!")
+                                        else:
+                                            print("¡Pensaste en otro mueble, como una mesa o una cama!")
+                                else:
+                                    r = get_valid_input("¿Es un objeto decorativo? (S/N): ")
+                                    if r == "S":
+                                        r = get_valid_input("¿Es algo que se cuelga en la pared? (S/N): ")
+                                        if r == "S":
+                                            print("¡Pensaste en un objeto decorativo de pared, como un cuadro o un espejo!")
+                                        else:
+                                            print("¡Pensaste en un objeto decorativo no de pared, como una lámpara o una estatua!")
+                                    else:
+                                        r = get_valid_input("¿Es un dispositivo electrónico? (S/N): ")
+                                        if r == "S":
+                                            print("¡Pensaste en un dispositivo electrónico de interior, como un televisor o un ordenador!")
+                                        else:
+                                            print("¡Pensaste en otro objeto de interior, como un libro o un juguete!")
+                    else:
+                        r = get_valid_input("¿Es algo natural, como una roca o un río? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es un cuerpo de agua? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un cuerpo de agua grande, como un océano? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un cuerpo de agua grande, como un océano o un lago!")
+                                else:
+                                    print("¡Pensaste en un cuerpo de agua pequeño, como un río o un arroyo!")
+                            else:
+                                r = get_valid_input("¿Es una formación geológica? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es una formación elevada, como una montaña? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en una formación geológica elevada, como una montaña o una colina!")
+                                    else:
+                                        print("¡Pensaste en una formación geológica no elevada, como una cueva o un cañón!")
+                                else:
+                                    r = get_valid_input("¿Es un fenómeno celeste, como una estrella? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un cuerpo celeste, como una estrella o un planeta!")
+                                    else:
+                                        print("¡Pensaste en otro elemento natural, como una nube o un volcán!")
+                        else:
+                            r = get_valid_input("¿Es un vehículo? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un vehículo de transporte personal? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es un vehículo motorizado? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un vehículo personal motorizado, como un coche o una motocicleta!")
+                                    else:
+                                        print("¡Pensaste en un vehículo personal no motorizado, como una bicicleta o un patinete!")
+                                else:
+                                    r = get_valid_input("¿Es un vehículo de transporte público? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un vehículo de transporte público, como un autobús o un tren!")
+                                    else:
+                                        print("¡Pensaste en un vehículo grande, como un camión o un barco!")
+                            else:
+                                r = get_valid_input("¿Es un edificio o estructura? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es un edificio residencial? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un edificio residencial, como una casa o un apartamento!")
+                                    else:
+                                        print("¡Pensaste en un edificio no residencial, como un puente o un estadio!")
+                                else:
+                                    r = get_valid_input("¿Es un objeto deportivo? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un objeto deportivo al aire libre, como una pelota o una red!")
+                                    else:
+                                        print("¡Pensaste en otro objeto artificial al aire libre, como un poste de luz o una estatua!")
+            else:
+                r = get_valid_input("¿Es un concepto o idea, como el amor o el tiempo? (S/N): ")
+                if r == "S":
+                    r = get_valid_input("¿Es una emoción o sentimiento? (S/N): ")
+                    if r == "S":
+                        r = get_valid_input("¿Es una emoción positiva, como el amor o la felicidad? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es una emoción asociada con logros, como el orgullo? (S/N): ")
+                            if r == "S":
+                                print("¡Pensaste en una emoción positiva de logro, como el orgullo o la satisfacción!")
+                            else:
+                                r = get_valid_input("¿Es una emoción asociada con relaciones, como el amor? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en una emoción positiva relacional, como el amor o la amistad!")
+                                else:
+                                    print("¡Pensaste en otra emoción positiva, como la alegría o la esperanza!")
+                        else:
+                            r = get_valid_input("¿Es una emoción asociada con pérdida, como la tristeza? (S/N): ")
+                            if r == "S":
+                                print("¡Pensaste en una emoción negativa de pérdida, como la tristeza o el duelo!")
+                            else:
+                                r = get_valid_input("¿Es una emoción asociada con peligro, como el miedo? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en una emoción negativa de peligro, como el miedo o la ansiedad!")
+                                else:
+                                    print("¡Pensaste en otra emoción negativa, como la ira o la frustración!")
+                    else:
+                        r = get_valid_input("¿Es un concepto relacionado con el arte, como la música o la pintura? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es la música o algo relacionado con ella? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es la música como una pieza o interpretación audible? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es un género musical moderno, como pop o rock? (S/N): ")
+                                    if r == "S":
+                                        r = get_valid_input("¿Es un género bailable, como pop o electrónica? (S/N): ")
+                                        if r == "S":
+                                            print("¡Pensaste en un género musical moderno bailable, como pop o música electrónica!")
+                                        else:
+                                            print("¡Pensaste en un género musical moderno no bailable, como rock o hip-hop!")
+                                    else:
+                                        r = get_valid_input("¿Es un género clásico o tradicional, como música clásica o folclórica? (S/N): ")
+                                        if r == "S":
+                                            print("¡Pensaste en un género musical clásico o tradicional, como música clásica o folclórica!")
+                                        else:
+                                            print("¡Pensaste en otro género musical, como jazz o blues!")
+                                else:
+                                    r = get_valid_input("¿Es un concepto teórico de la música, como una escala o un acorde? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un concepto teórico musical, como una escala o un acorde!")
+                                    else:
+                                        print("¡Pensaste en otro aspecto abstracto de la música, como el ritmo o la armonía!")
+                            else:
+                                r = get_valid_input("¿Es un concepto visual, como la pintura o la escultura? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es bidimensional, como una pintura o un dibujo? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un arte visual bidimensional, como una pintura o un dibujo!")
+                                    else:
+                                        print("¡Pensaste en un arte visual tridimensional, como una escultura o una instalación!")
+                                else:
+                                    r = get_valid_input("¿Es un concepto literario, como la poesía o la narrativa? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un concepto literario, como la poesía o una novela!")
+                                    else:
+                                        print("¡Pensaste en otro concepto artístico, como la danza o el teatro!")
+                        else:
+                            r = get_valid_input("¿Es un concepto científico, como la gravedad o el tiempo? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un concepto físico, como la energía? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es un concepto relacionado con la energía, como la electricidad? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un concepto físico de energía, como la electricidad o la termodinámica!")
+                                    else:
+                                        print("¡Pensaste en otro concepto físico, como la gravedad o el magnetismo!")
+                                else:
+                                    r = get_valid_input("¿Es un concepto relacionado con la vida, como el ADN? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un concepto científico biológico, como la evolución o el ADN!")
+                                    else:
+                                        print("¡Pensaste en otro concepto científico, como la ecología o la genética!")
+                            else:
+                                r = get_valid_input("¿Es un concepto social, como la justicia? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es un concepto político, como la democracia? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un concepto político, como la democracia o el socialismo!")
+                                    else:
+                                        print("¡Pensaste en otro concepto social, como la justicia o la igualdad!")
+                                else:
+                                    r = get_valid_input("¿Es un concepto filosófico, como la verdad? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un concepto filosófico, como la verdad o la existencia!")
+                                    else:
+                                        print("¡Pensaste en otro concepto abstracto, como el destino o la moral!")
+                else:
+                    r = get_valid_input("¿Es un fenómeno natural, como el viento o la lluvia? (S/N): ")
+                    if r == "S":
+                        r = get_valid_input("¿Es un fenómeno meteorológico? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es un fenómeno relacionado con la precipitación, como la lluvia? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es líquido, como la lluvia? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un fenómeno meteorológico líquido, como la lluvia o el rocío!")
+                                else:
+                                    print("¡Pensaste en un fenómeno meteorológico sólido, como la nieve o el granizo!")
+                            else:
+                                r = get_valid_input("¿Es un fenómeno relacionado con el viento? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un fenómeno de viento, como un huracán o una brisa!")
+                                else:
+                                    print("¡Pensaste en otro fenómeno meteorológico, como un rayo o una niebla!")
+                        else:
+                            r = get_valid_input("¿Es un fenómeno óptico, como la luz o un arcoíris? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es la luz como un fenómeno observable, como la luz solar? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es luz emitida por una fuente natural, como el sol? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en luz emitida por una fuente natural, como la luz solar o la luz estelar!")
+                                    else:
+                                        print("¡Pensaste en luz reflejada o dispersada, como un arcoíris o un resplandor!")
+                                else:
+                                    r = get_valid_input("¿Es un concepto relacionado con la luz, como un fotón? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un concepto científico de la luz, como un fotón o un espectro!")
+                                    else:
+                                        print("¡Pensaste en otro fenómeno óptico, como una sombra o un reflejo!")
+                            else:
+                                r = get_valid_input("¿Es un fenómeno geológico, como un terremoto? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un fenómeno geológico, como un terremoto o un maremoto!")
+                                else:
+                                    print("¡Pensaste en otro fenómeno natural, como un géiser o una aurora!")
+                    else:
+                        r = get_valid_input("¿Es algo que se percibe con los sentidos, como un olor o un sonido? (S/N): ")
+                        if r == "S":
+                            r = get_valid_input("¿Es un fenómeno auditivo, como un sonido o un ruido? (S/N): ")
+                            if r == "S":
+                                r = get_valid_input("¿Es un sonido producido por la naturaleza, como el trueno? (S/N): ")
+                                if r == "S":
+                                    print("¡Pensaste en un sonido natural, como el trueno o el canto de un pájaro!")
+                                else:
+                                    r = get_valid_input("¿Es un sonido producido por humanos, como el habla? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un sonido humano, como el habla o una sirena!")
+                                    else:
+                                        print("¡Pensaste en otro sonido artificial, como el ruido de un motor!")
+                            else:
+                                r = get_valid_input("¿Es un fenómeno olfativo, como un olor? (S/N): ")
+                                if r == "S":
+                                    r = get_valid_input("¿Es un olor agradable, como el de una flor? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un olor agradable, como el de una flor o un perfume!")
+                                    else:
+                                        print("¡Pensaste en un olor desagradable, como el de basura o químicos!")
+                                else:
+                                    r = get_valid_input("¿Es un fenómeno táctil, como el calor o el frío? (S/N): ")
+                                    if r == "S":
+                                        print("¡Pensaste en un fenómeno táctil, como el calor o una textura!")
+                                    else:
+                                        print("¡Pensaste en otro fenómeno sensorial, como un sabor o una sensación visual!")
+                        else:
+                            r = get_valid_input("¿Es un fenómeno temporal, como el pasado o el futuro? (S/N): ")
+                            if r == "S":
+                                print("¡Pensaste en un fenómeno temporal, como el pasado o el futuro!")
+                            else:
+                                print("¡Pensaste en otro fenómeno no físico ni sensorial, como una sombra o un eco!")
+    else:
+        r = get_valid_input("¿Es algo de ficción, como un personaje o un lugar imaginario? (S/N): ")
+        if r == "S":
+            r = get_valid_input("¿Es un personaje ficticio? (S/N): ")
+            if r == "S":
+                r = get_valid_input("¿Es un personaje de un libro? (S/N): ")
+                if r == "S":
+                    r = get_valid_input("¿Es un personaje de fantasía? (S/N): ")
+                    if r == "S":
+                        print("¡Pensaste en un personaje ficticio de fantasía de un libro, como Harry Potter o Frodo!")
+                    else:
+                        print("¡Pensaste en un personaje ficticio de un libro no de fantasía, como Don Quijote!")
+                else:
+                    r = get_valid_input("¿Es un personaje de una película o serie? (S/N): ")
+                    if r == "S":
+                        r = get_valid_input("¿Es un personaje de ciencia ficción? (S/N): ")
+                        if r == "S":
+                            print("¡Pensaste en un personaje de ciencia ficción, como Darth Vader o Spock!")
+                        else:
+                            print("¡Pensaste en un personaje de película o serie no de ciencia ficción, como Walter White!")
+                    else:
+                        r = get_valid_input("¿Es un personaje de un videojuego? (S/N): ")
+                        if r == "S":
+                            print("¡Pensaste en un personaje de videojuego, como Mario o Lara Croft!")
+                        else:
+                            print("¡Pensaste en un personaje ficticio de otro medio, como un mito o una leyenda!")
+            else:
+                r = get_valid_input("¿Es un lugar ficticio? (S/N): ")
+                if r == "S":
+                    r = get_valid_input("¿Es un lugar de fantasía, como un reino mágico? (S/N): ")
+                    if r == "S":
+                        print("¡Pensaste en un lugar ficticio de fantasía, como Narnia o el Reino de Oz!")
+                    else:
+                        print("¡Pensaste en un lugar ficticio no de fantasía, como Gotham o Springfield!")
+                else:
+                    r = get_valid_input("¿Es un objeto ficticio? (S/N): ")
+                    if r == "S":
+                        print("¡Pensaste en un objeto ficticio, como una nave espacial o un anillo mágico!")
+                    else:
+                        print("¡Pensaste en otra cosa ficticia, como un evento o un idioma ficticio!")
+        else:
+            r = get_valid_input("¿Es un concepto matemático, como un número o una ecuación? (S/N): ")
+            if r == "S":
+                r = get_valid_input("¿Es un número, como pi o el infinito? (S/N): ")
+                if r == "S":
+                    r = get_valid_input("¿Es un número finito? (S/N): ")
+                    if r == "S":
+                        print("¡Pensaste en un número finito, como el cero o el siete!")
+                    else:
+                        print("¡Pensaste en un número infinito, como el infinito o pi!")
+                else:
+                    r = get_valid_input("¿Es una ecuación o fórmula? (S/N): ")
+                    if r == "S":
+                        print("¡Pensaste en una ecuación o fórmula matemática, como E=mc²!")
+                    else:
+                        print("¡Pensaste en otro concepto matemático, como un teorema o una función!")
+            else:
+                r = get_valid_input("¿Es algo que aparece en sueños o la imaginación? (S/N): ")
+                if r == "S":
+                    print("¡Pensaste en algo imaginario, como un sueño o una fantasía!")
+                else:
+                    print("¡Pensaste en otra cosa no real, como un concepto filosófico o una paradoja!")
+
+
+def main():
+    while True:
+        juego_principal()
+        print("\n" + "="*50)
+        jugar_otra_vez = get_valid_input("\n¿Quieres jugar otra vez? (S/N): ")
+        if jugar_otra_vez == "N":
+            print("¡Gracias por jugar! ¡Hasta la próxima!")
+            break
+        print("\n")
+
+
+if __name__ == "__main__":
+    main()
